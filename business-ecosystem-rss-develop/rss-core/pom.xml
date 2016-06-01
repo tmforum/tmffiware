@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  
+  <parent>
+    <artifactId>rss</artifactId>
+    <groupId>es.upm.fiware</groupId>
+    <version>4.4.3</version>
+  </parent>
+  
+  <groupId>es.upm.fiware.rss</groupId>
+  <artifactId>rss-core</artifactId>
+  <packaging>pom</packaging>
+  <name>rss-core</name>  
+  <organization>
+        <name>Universidad Politécnica de Madrid</name>
+        <url>http://conwet.fi.upm.es</url>
+   </organization>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  
+    <modules>
+        <module>rss-common</module>
+        <module>rss-model</module>
+        <module>rss-dao</module>
+        <module>rss-exception</module>
+        <module>rss-oauth</module>	
+  </modules> 
+   
+</project>

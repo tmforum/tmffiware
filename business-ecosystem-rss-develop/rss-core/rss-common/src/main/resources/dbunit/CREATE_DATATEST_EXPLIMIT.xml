@@ -1,0 +1,161 @@
+<?xml version='1.0' encoding='utf-8'?>
+<dataset>
+  <dbe_expend_limit nu_service_id ="1" 
+      tx_end_user_id = "userId01"
+      tx_appprovider_id ="123456" 
+      nu_currency_id = "1"
+      nu_ob_id ="1"
+      nu_country_id ="1"
+      tx_el_type = "perTransaction"
+      ft_max_amount = "50"
+      tx_notif_amounts = ""/>
+ 
+  <dbe_expend_limit nu_service_id ="2" 
+      tx_end_user_id = "noUserId"
+      tx_appprovider_id ="-1" 
+      nu_currency_id = "1"
+      nu_ob_id ="1"
+      nu_country_id ="1"
+      tx_el_type = "daily"
+      ft_max_amount = "100"
+      tx_notif_amounts = "[80, 90, 95]"/>
+      
+   <dbe_expend_limit nu_service_id ="1" 
+      tx_end_user_id = "noUserId"
+      tx_appprovider_id ="-1" 
+      nu_currency_id = "1"
+      nu_ob_id ="1"
+      nu_country_id ="1"
+      tx_el_type = "daily"
+      ft_max_amount = "100"
+      tx_notif_amounts = "[25]"/>  
+
+      
+  <dbe_expend_limit nu_service_id ="1" 
+      tx_end_user_id = "noUserId"
+      tx_appprovider_id ="-1" 
+      nu_currency_id = "1"
+      nu_ob_id ="1"
+      nu_country_id ="1"
+      tx_el_type = "weekly"
+      ft_max_amount = "150"
+      tx_notif_amounts = "[80, 90, 95]"/>  
+
+      
+    <dbe_expend_limit nu_service_id ="1" 
+      tx_end_user_id = "noUserId"
+      tx_appprovider_id ="-1" 
+      nu_currency_id = "1"
+      nu_ob_id ="1"
+      nu_country_id ="1"
+      tx_el_type = "monthly"
+      ft_max_amount = "300"
+      tx_notif_amounts = "[80, 90, 95]"/>
+
+  <dbe_expend_limit nu_service_id ="1" 
+      tx_end_user_id = "userId01"
+      tx_appprovider_id ="123456" 
+      nu_currency_id = "1"
+      nu_ob_id ="1"
+      nu_country_id ="1"
+      tx_el_type = "monthly"
+      ft_max_amount = "100"
+      tx_notif_amounts = "[70, 85, 90]"/>
+
+  <dbe_expend_limit nu_service_id ="1" 
+      tx_end_user_id = "userId01"
+      tx_appprovider_id ="app123456" 
+      nu_currency_id = "1"
+      nu_ob_id ="1"
+      nu_country_id ="1"
+      tx_el_type = "daily"
+      ft_max_amount = "50"
+      tx_notif_amounts = "[40, 45]"/>
+
+  <dbe_expend_limit nu_service_id ="1" 
+      tx_end_user_id = "noUserId"
+      tx_appprovider_id ="app123456" 
+      nu_currency_id = "1"
+      nu_ob_id ="1"
+      nu_country_id ="1"
+      tx_el_type = "daily"
+      ft_max_amount = "80"
+      tx_notif_amounts = "[90, 95]"/>
+
+  <dbe_expend_limit nu_service_id ="1" 
+      tx_end_user_id = "userId01"
+      tx_appprovider_id ="-1" 
+      nu_currency_id = "1"
+      nu_ob_id ="1"
+      nu_country_id ="1"
+      tx_el_type = "daily"
+      ft_max_amount = "70"
+      tx_notif_amounts = "[75]"/>
+
+    <dbe_expend_control nu_service_id ="1" 
+      tx_end_user_id = "userId01"
+      tx_appprovider_id ="app123456" 
+      nu_currency_id = "1"
+      nu_ob_id ="1"
+      nu_country_id ="1"
+      tx_el_type = "daily"
+      ft_expensed_amount = "41"
+      dt_next_period_start = "2012-07-01 00:00:00.0"
+      tx_notifications = "[40]"/>
+
+  <dbe_expend_control nu_service_id ="1" 
+      tx_end_user_id = "userId01"
+      tx_appprovider_id ="app123456" 
+      nu_currency_id = "1"
+      nu_ob_id ="1"
+      nu_country_id ="1"
+      tx_el_type = "weekly"
+      ft_expensed_amount = "41"
+      dt_next_period_start = "2012-07-01 00:00:00.0"
+      tx_notifications = ""/>
+
+  <dbe_expend_control nu_service_id ="1" 
+      tx_end_user_id = "userId01"
+      tx_appprovider_id ="app123456" 
+      nu_currency_id = "1"
+      nu_ob_id ="1"
+      nu_country_id ="1"
+      tx_el_type = "monthly"
+      ft_expensed_amount = "41"
+      dt_next_period_start = "2012-07-01 00:00:00.0"
+      tx_notifications = ""/>
+      
+   <dbe_expend_control nu_service_id ="1" 
+      tx_end_user_id = "userIdUpdate"
+      tx_appprovider_id ="app123456" 
+      tx_el_type = "daily"
+      nu_currency_id = "1"
+      nu_ob_id ="1"
+      nu_country_id ="1"
+      ft_expensed_amount = "41"
+      dt_next_period_start = "2013-05-01 00:00:00.0"
+      tx_notifications = "[20]"/>
+      
+   <dbe_expend_control nu_service_id ="1" 
+      tx_end_user_id = "userIdUpdate"
+      tx_appprovider_id ="app123456" 
+      tx_el_type = "weekly"
+      nu_currency_id = "1"
+      nu_ob_id ="1"
+      nu_country_id ="1"
+      ft_expensed_amount = "41"
+      dt_next_period_start = "2013-05-06 00:00:00.0"
+      tx_notifications = "[40]"/>
+      
+   <dbe_expend_control nu_service_id ="1" 
+      tx_end_user_id = "userIdUpdate"
+      tx_appprovider_id ="app123456" 
+      tx_el_type = "monthly"
+      nu_currency_id = "1"
+      nu_ob_id ="1"
+      nu_country_id ="1"
+      ft_expensed_amount = "41"
+      dt_next_period_start = "2013-05-01 00:00:00.0"
+      tx_notifications = "[40]"/>
+  
+</dataset>

@@ -1,0 +1,101 @@
+var config = {};
+
+// The PORT used by 
+config.port = 80;
+
+// Set this var to undefined if you don't want the server to listen on HTTPS
+config.https = {
+    enabled: false,
+    certFile: 'cert/cert.crt',
+    keyFile: 'cert/key.key',
+    caFile: 'cert/ca.crt',
+    port: 443
+};
+
+// Express configuration
+config.proxyPrefix = '/proxy';
+config.portalPrefix = '';
+config.logInPath = '/login';
+config.logOutPath = '/logOut';
+config.sessionSecret = 'keyboard cat';
+
+// OAuth2 configuration
+config.oauth2 = {
+    'server': 'https://account.lab.fiware.org',
+    'clientID': '--client-id--',
+    'clientSecret': '--client-secret--',
+    'callbackURL': '--callback-url--',
+    'roles': {
+        'admin': 'provider',
+        'customer': 'customer',
+        'seller': 'seller'
+    }
+}
+
+// Customer Role Required to buy items
+config.customerRoleRequired = false;
+
+// MongoDB
+config.mongoDb = {
+    server: 'localhost',
+    port: 27017,
+    user: '',
+    password: '',
+    db: 'belp'
+};
+
+// TMForum APIs final paths
+config.appHost = '';
+
+// Configure endpoints
+config.endpoints = {
+    'catalog': {
+        'path': '',
+        'port': ''
+    },
+    'ordering': {
+         'path': '',
+         'port': ''
+    },
+    'inventory': {
+        'path': '',
+        'port': ''
+    },
+    'party': {
+        'path': '',
+        'port': ''
+    },
+    'billing': {
+        'path': '',
+        'port': ''
+    },
+    'customer': {
+        'path': '',
+        'port': ''
+    },
+    'charging': {
+        'path': '',
+        'port': ''
+    },
+    'rss': {
+        'path': '',
+        'port': ''
+    }
+};
+
+// Percentage of the generated revenues that belongs to the system
+config.revenueModel = 30;
+
+// Billing Account owner role
+config.billingAccountOwnerRole = 'bill receiver';
+
+// Use true if the app server listens in https
+config.appSsl = false;
+
+// list of paths that will not check authentication/authorization
+// example: ['/public/*', '/static/css/']
+config.publicPaths = [];
+
+config.magicKey = undefined;
+
+module.exports = config;

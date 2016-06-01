@@ -1,0 +1,111 @@
+h2 {
+    color: rgb(0, 43, 103);
+}
+
+#navbar-dec {
+  width: 305px;
+  background-color: rgb(244, 244, 244);
+  border-radius: 0px 0px 10px 0px;
+  position: fixed;
+  height: 26px;
+  z-index: 1031;
+  top: 39px;
+  border-color: rgb(229, 229, 229);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+}
+
+#navbar-dec h2 {
+  font-size: 25px;
+  position: absolute;
+  top: -25px;
+  left: 95px;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.table th {
+    background-color: #EBEBEB !important;
+}
+
+.table tr {
+    background-color: rgb(255, 255, 255) !important;
+}
+
+.embedded-input {
+    margin-top: 10px;
+}
+
+.back {
+    margin-top: 30px;
+    margin-left: 10px;
+}
+
+.footer {
+    position: fixed;
+    width: 100%;
+    margin-left: 0px;
+    z-index: 100;
+    bottom: 0;
+    background-color: rgb(255, 255, 255);
+    padding-bottom: 10px;
+    padding-top: 5px;
+}
+
+.form-divider {
+    height: 1px;
+    margin: 9px 0;
+    overflow: hidden;
+    background-color: rgb(229, 229, 229);
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.selected-stakeholder {
+    width: 90%;
+    background-color: rgb(255, 255, 255);
+    height: 34px;
+    border: solid 1px rgb(229, 229, 229);
+    border-radius: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 4px;
+}
+
+.selected-stakeholder span {
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.st-value {
+    float: right;
+}
+
+.remove-st {
+    float: right;
+    margin-top: -34px;
+}
+
+.modal-header h3 {
+    margin: 0;
+}
+
+.modal-footer {
+    padding: 10px;
+}
+
+table.big-margin {
+  margin-top: 50px;
+}
+
+.small-sel {
+    width: auto;
+    display: inline;
+}

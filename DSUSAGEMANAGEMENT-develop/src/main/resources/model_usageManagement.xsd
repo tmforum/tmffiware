@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace='http://orange.com/api/usageManagement/tmf/v2/model/business' attributeFormDefault='unqualified' elementFormDefault='qualified' xmlns='http://orange.com/api/usageManagement/tmf/v2/model/business' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+  <xsd:annotation id='sidTag'>
+    <xsd:appinfo></xsd:appinfo>
+  </xsd:annotation>
+  <xsd:element name='Usage' type='Usage' />
+  <xsd:element name='UsageSpecification' type='UsageSpecification' />
+  <xsd:element name='RatedProductUsage' type='RatedProductUsage' />
+  <xsd:element name='RelatedParty' type='RelatedParty' />
+  <xsd:element name='UsageCharacteristic' type='UsageCharacteristic' />
+  <xsd:element name='UsageSpecCharacteristic' type='UsageSpecCharacteristic' />
+  <xsd:element name='UsageSpecCharacteristicValue' type='UsageSpecCharacteristicValue' />
+  <xsd:element name='ValidFor' type='ValidFor' />
+  <xsd:complexType name='Usage'>
+    <xsd:sequence minOccurs='1' maxOccurs='1'>
+      <xsd:element name='id' type='xsd:long' minOccurs='0' />
+      <xsd:element name='href' type='xsd:string' minOccurs='0' />
+      <xsd:element name='date' type='xsd:dateTime' minOccurs='0' />
+      <xsd:element name='type' type='xsd:string' minOccurs='0' />
+      <xsd:element name='description' type='xsd:string' minOccurs='0' />
+      <xsd:element name='status' type='Status' minOccurs='0' />
+      <xsd:element name='usageSpecification' type='UsageSpecification' minOccurs='0' />
+      <xsd:element name='usageCharacteristic' type='UsageCharacteristic' minOccurs='0' maxOccurs='unbounded' />
+      <xsd:element name='relatedParty' type='RelatedParty' minOccurs='0' maxOccurs='unbounded' />
+      <xsd:element name='ratedProductUsage' type='RatedProductUsage' minOccurs='0' maxOccurs='unbounded' />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name='UsageSpecification'>
+    <xsd:sequence minOccurs='1' maxOccurs='1'>
+      <xsd:element name='id' type='xsd:long' minOccurs='0' />
+      <xsd:element name='href' type='xsd:string' minOccurs='0' />
+      <xsd:element name='name' type='xsd:string' minOccurs='0' />
+      <xsd:element name='description' type='xsd:string' minOccurs='0' />
+      <xsd:element name='validFor' type='ValidFor' minOccurs='0' />
+      <xsd:element name='usageSpecCharacteristic' type='UsageSpecCharacteristic' minOccurs='0' maxOccurs='unbounded' />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name='RatedProductUsage'>
+    <xsd:sequence minOccurs='1' maxOccurs='1'>
+      <xsd:element name='ratingDate' type='xsd:dateTime' minOccurs='0' />
+      <xsd:element name='usageRatingTag' type='xsd:string' minOccurs='0' />
+      <xsd:element name='isBilled' type='xsd:boolean' minOccurs='0' />
+      <xsd:element name='ratingAmountType' type='xsd:string' minOccurs='0' />
+      <xsd:element name='taxIncludedRatingAmount' type='xsd:float' minOccurs='0' />
+      <xsd:element name='taxExcludedRatingAmount' type='xsd:float' minOccurs='0' />
+      <xsd:element name='taxRate' type='xsd:float' minOccurs='0' />
+      <xsd:element name='isTaxExempt' type='xsd:boolean' minOccurs='0' />
+      <xsd:element name='offerTariffType' type='xsd:string' minOccurs='0' />
+      <xsd:element name='bucketValueConvertedInAmount' type='xsd:float' minOccurs='0' />
+      <xsd:element name='currencyCode' type='xsd:string' minOccurs='0' />
+      <xsd:element name='productRef' type='xsd:string' minOccurs='0' />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name='RelatedParty'>
+    <xsd:sequence minOccurs='1' maxOccurs='1'>
+      <xsd:element name='id' type='xsd:string' minOccurs='0' />
+      <xsd:element name='href' type='xsd:string' minOccurs='0' />
+      <xsd:element name='role' type='xsd:string' minOccurs='0' />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name='UsageCharacteristic'>
+    <xsd:sequence minOccurs='1' maxOccurs='1'>
+      <xsd:element name='name' type='xsd:string' minOccurs='0' />
+      <xsd:element name='value' type='xsd:string' minOccurs='0' />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name='UsageSpecCharacteristic'>
+    <xsd:sequence minOccurs='1' maxOccurs='1'>
+      <xsd:element name='name' type='xsd:string' minOccurs='0' />
+      <xsd:element name='description' type='xsd:string' minOccurs='0' />
+      <xsd:element name='configurable' type='xsd:boolean' minOccurs='0' />
+      <xsd:element name='usageSpecCharacteristicValue' type='UsageSpecCharacteristicValue' minOccurs='0' maxOccurs='unbounded' />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name='UsageSpecCharacteristicValue'>
+    <xsd:sequence minOccurs='1' maxOccurs='1'>
+      <xsd:element name='valueType' type='xsd:string' minOccurs='0' />
+      <xsd:element name='default' type='xsd:boolean' minOccurs='0' />
+      <xsd:element name='value' type='xsd:string' minOccurs='0' />
+      <xsd:element name='valueFrom' type='xsd:string' minOccurs='0' />
+      <xsd:element name='valueTo' type='xsd:string' minOccurs='0' />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name='ValidFor'>
+    <xsd:sequence minOccurs='1' maxOccurs='1'>
+      <xsd:element name='startDateTime' type='xsd:dateTime' minOccurs='0' />
+      <xsd:element name='endDateTime' type='xsd:dateTime' minOccurs='0' />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name='Status'>
+    <xsd:restriction base='xsd:string'>
+      <xsd:enumeration value='Received'>
+        <xsd:annotation />
+      </xsd:enumeration>
+      <xsd:enumeration value='Rejected'>
+        <xsd:annotation />
+      </xsd:enumeration>
+      <xsd:enumeration value='Recycled'>
+        <xsd:annotation />
+      </xsd:enumeration>
+      <xsd:enumeration value='Guided'>
+        <xsd:annotation />
+      </xsd:enumeration>
+      <xsd:enumeration value='Rated'>
+        <xsd:annotation />
+      </xsd:enumeration>
+      <xsd:enumeration value='Rerate'>
+        <xsd:annotation />
+      </xsd:enumeration>
+      <xsd:enumeration value='Billed'>
+        <xsd:annotation />
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>

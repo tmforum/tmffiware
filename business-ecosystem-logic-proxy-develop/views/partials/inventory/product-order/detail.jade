@@ -1,0 +1,40 @@
+.row
+  .col-xs-12
+    include ./breadcrumb.jade
+  .col-xs-12(ng-switch="detailVM.item.status")
+    div(ng-switch-when="LOADED")
+      .panel.panel-default.z-depth-1
+        .panel-heading
+          .h4
+            strong
+              time(title="{{ detailVM.item.requestedStartDate | amDateFormat: 'dddd, MMMM Do YYYY, h:mm a' }}") {{ detailVM.item.requestedStartDate | amCalendar }}
+            .small by {{ detailVM.item.getCustomer().id }}
+        .panel-body
+          .row(ng-repeat="orderItem in detailVM.item.orderItem")
+            hr(ng-if="!$first")
+            .col-xs-12.col-sm-4
+              .thumbnail.thumbnail-lg
+                img(no-image, ng-src="{{ orderItem.productOffering.getPicture() }}")
+            .col-xs-12.col-sm-6
+              .h4
+                strong
+                  a(ui-sref="offering.detail({ offeringId: orderItem.productOffering.id })", ui-sref-opts="{ inherit: false }")
+                    span.item-text {{ orderItem.productOffering.name }}
+              dl
+                dt Description
+                dd.text-dark-secondary {{ orderItem.productOffering.description ? orderItem.productOffering.description : 'No description provided.' }}
+                dt State
+                dd.text-dark-secondary {{ orderItem.state }}
+                dt Price
+                dd.text-dark-secondary {{ detailVM.item.formatPriceplanOf($index) }}
+                dt Billing address
+                dd.text-dark-secondary
+                  span(style="white-space: pre-line;") {{ orderItem.billingAccount.getPostalAddress().toString() }}
+                dt(ng-if="orderItem.product.productCharacteristic.length") Characteristics
+                dd(ng-if="orderItem.product.productCharacteristic.length" style="padding-left: 15px;")
+                  p(ng-repeat="characteristic in orderItem.product.productCharacteristic")
+                    strong {{ characteristic.name }}:
+                    span.text-dark-secondary  {{ characteristic.value }}
+    .alert.alert-danger.text-center(ng-switch-when="ERROR") {{ detailVM.error }}
+    .container-spinner(ng-switch-default)
+      span.fa.fa-spinner.fa-spin.fa-2x

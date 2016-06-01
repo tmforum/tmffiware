@@ -1,0 +1,144 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{ basedir }}/wstore/templates/contracting/billing_style/bootstrap-3.3.5/css/bootstrap.css" />
+
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-1" id="logo">
+                    <img src="{{ basedir }}/wstore/templates/contracting/billing_style/img/fiware-tmforum-logo.png" />
+                </div>
+                <div class="col-md-2" style="position: fixed; top: 0px; right: 10px;">
+                    <p><b>Date: </b> {{ date }}</p>
+                    <p><b>Ref: </b> {{ ref }}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <p><b>Customer Info:</b></p>
+                    <p>{{ organization }}</p>
+                    <p>{{ customer }}</p>
+                    <p>{{ address }}</p>
+                    <p>{{ postal }}</p>
+                    <p>{{ city }}</p>
+                    <p>{{ province }}</p>
+                    <p>{{ country }}</p>
+                </div>
+            </div>
+            <div class="row">
+                <h2>{{ off_organization }} {{ offering_name }} {{ off_version }}</h2>
+                {% if exists_single %}
+                <h3>One time payments</h3>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>
+                                Duty free
+                            </th>
+                            <th>
+                                Tax rate
+                            </th>
+                            <th>
+                                Total
+                            </th>
+                        <tr>
+                    </thead>
+                    <tbody>
+                        {% for f, tr, v, c in single_parts %}
+                        <tr>
+                            <td>
+                                {{ f }} {{ c }}
+                            </td>
+                            <td>
+                                {{ tr }} %
+                            </td>
+                            <td>
+                                {{ v }} {{ c }}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                {% endif %}
+            </div>
+            <div class="row">
+                {% if exists_subs %}
+                <h3>Recurring Payments</h3>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>
+                                Duty free
+                            </th>
+                            <th>
+                                Tax rate
+                            </th>
+                            <th>
+                                Total
+                            </th>
+                            <th>
+                                Period
+                            </th>
+                            <th>
+                                Renovation date
+                            </th>
+                        <tr>
+                    </thead>
+                    <tbody>
+                        {% for f, tr, v, c, u, d in subs_parts %}
+                        <tr>
+                            <td>
+                                {{ f }} {{ c }}
+                            </td>
+                            <td>
+                                {{ tr }} %
+                            </td>
+                            <td>
+                                {{ v }} {{ c }}
+                            </td>
+                            <td>
+                                {{ u }}
+                            </td>
+                            <td>
+                                {{ d }}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                {% endif %}
+            </div>
+            <div class="row">
+                <table class="table table-bordered" id="price">
+                    <thead>
+                        <tr>
+                            <th>
+                                Duty free
+                            </th>
+                            <th>
+                                Taxes
+                            </th>
+                            <th>
+                                Total price
+                            </th>
+                        <tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                {{ subtotal }}
+                            </td>
+                            <td>
+                                {{ tax }}
+                            </td>
+                            <td>
+                                {{ total }} {{ cur }}
+                            </td>
+                        <tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>
